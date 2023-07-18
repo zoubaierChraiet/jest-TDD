@@ -19,4 +19,11 @@ describe("checkout test", () => {
   it("Should return 30 when sending DD", () => {
     expect(checkout("DD")).toBe(30);
   });
+  it("Should return 115 when sending ABCD", () => {
+    expect(checkout("ABCD")).toBe(115);
+  });
+  // THROW ERROR TEST
+  it("Should throw error with invalid characters", () => {
+    expect(() => checkout("Z")).toThrow("Unknown Item Error");
+  });
 });
